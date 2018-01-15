@@ -1,3 +1,3 @@
 # Idaproject
-> npm i
-> gulp
+  > run npm i  
+  > run gulp  
