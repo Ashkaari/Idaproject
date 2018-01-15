@@ -1,0 +1,367 @@
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.ttf') format('truetype'),
+       url('../fonts/OpenSans-Bold.woff') format('woff'),
+       url('../fonts/OpenSans-Bold.woff2') format('woff2');
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background-color: #101114;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;  color: #7f8591;
+  font-size: 12px;
+  text-align:center;
+}
+
+p {
+  margin: 0;
+}
+
+.title {
+  font-size: 22px;
+  font-family: OpenSans-Bold;
+  color: #383d43;
+}
+
+/*-------------MENU---------------*/
+.menu {
+  width: 321px;
+  background-color: #191c24;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+
+  & a {
+    display: block;
+    text-decoration: none;
+    height: 75px;
+    border-bottom: 1px solid #20232b;
+    color: #ffffff;
+    font-family: "OpenSans-Bold";
+    line-height: 75px;
+    padding-left: 30px;
+    font-size: 18px;
+
+    &:nth-child(odd) {
+      background-color: #1f2229;
+    }
+
+    &.active  {
+      color: #808592;
+      background-color: #2a2d37;
+      cursor: default;
+    }
+
+    &.exit {
+      color: #808592;
+      background-color: transparent;
+    }
+
+    &.hidden {
+      display: none;
+    }
+    &:hover {
+      background-color: #2a2d37;
+    }
+  }
+}
+
+
+/*-------------CONTENT---------------*/
+.content {
+  width: 638px;
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  text-align: left;
+}
+
+.content__info {
+  background-color: #f7f8f8;
+  padding: 49px 47px 28px 28px;
+  position: relative;
+  font-size: 16px;
+  & p {
+    margin-bottom: 7px;
+  }
+}
+
+.payment__info {
+  line-height: 1.6;
+  margin-bottom: 38px;
+  & p {
+    margin-bottom: 25px;
+  }
+
+  & .header {
+    width: 160px;
+    display: inline-block;
+  }
+  & .value {
+    color: #373c43;
+  }
+
+}
+.content__footer {
+  font-size: 12px;
+  background-color: #373c43;
+  padding: 27px 44px 33px 28px;
+}
+
+input, select {
+  border: 1px solid #e4e9ee;
+  height: 40px;
+  padding-left: 10px;
+}
+
+select {
+  appearance: none;
+  padding-right: 25px;
+}
+
+
+.payment__card {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 24px 15px 13px 14px;
+  border: 1px solid #e4e9ee;
+  border-radius: 14px;
+  position: relative;
+  z-index: 1;
+  background-color: #f7f8f8;
+}
+
+.payment__card-back {
+  position:absolute;
+  top: 43%;
+  right: 47px;
+  padding: 16.5% 3% 10% 32%;
+
+  border: 1px solid #e4e9ee;
+  border-radius: 14px;
+
+  &:before {
+    content: "";
+    width: 100%;
+    height: 25%;
+    background-color: #e4e9ee;
+    position: absolute;
+    top: 14%;
+    right: 0;
+  }
+}
+
+.payment__card-numbers {
+  margin-bottom: 17px;
+}
+
+.payment__card-number {
+  width: 53px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.payment__card-date {
+  & label {
+    position: relative;
+    &:after {
+      content: '>';
+      font: 16px Consolas,monospace;
+      color: #c9d0d7;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+      position: absolute;
+      pointer-events: none;
+
+      right: 5px;
+      width: 18px;
+      height: 18px;
+      top: 50%;
+      text-align: center;
+      margin-top: -9px;
+    }
+  }
+
+}
+
+.payment__card-name {
+  display: block;
+  width: 95%;
+  margin-top: 13px;
+
+
+  &::placeholder {
+    color: #bec6cf;
+  }
+}
+
+.payment__card-cvv {
+  position: relative;
+  &:before {
+    content: '?';
+    background-color: transparent;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    /* display: block; */
+    position: absolute;
+    border: 1px solid #bec6cf;
+    border-radius: 17px;
+    line-height: 26px;
+    cursor: pointer;
+    color: #bec6cf;
+    top: 50%;
+    margin-top: -13px;
+    right: 7px;
+    z-index: 1;
+  }
+
+  & input {
+    width: 135px;
+  }
+}
+
+.error {
+  border-color: red;
+}
+
+.send {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 132px;
+  border-radius: 20px;
+  border:none;
+  background-color: #005abf;
+  color:white;
+  font-family: OpenSans-Bold;
+  margin: 40px 0 17px;
+
+  background: rgb(0,90,191);
+  background: -moz-linear-gradient(top, rgba(0,90,191,1) 0%, rgba(0,76,162,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0,90,191,1) 0%,rgba(0,76,162,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0,90,191,1) 0%,rgba(0,76,162,1) 100%);
+
+  &.disabled {
+    background: grey;
+    width: 160px;
+    pointer-events: none;
+  }
+}
+
+
+/*---------MEDIA QUERIES--------*/
+@media screen and (max-width: 1000px){
+  .menu {
+    width: 250px;
+  }
+
+  .content__info {
+    text-align: center;
+  }
+  .content {
+    width: 500px;
+  }
+
+  .payment__card-back {
+    border: none;
+    right: 108px;
+    z-index: 1;
+    top:55.5%;
+    padding: 0;
+    &:before {
+      display: none;
+    }
+  }
+
+  .payment__card-cvv {
+    &:before {
+      display: none;
+    }
+
+    input {
+      height: 36px;
+    }
+  }
+  .payment__card {
+    background-color: transparent;
+  }
+
+  .payment__info,
+  .payment__card {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content__info {
+    padding: 28px;
+  }
+  .menu {
+    width: 100%;
+
+    & a {
+      display: none;
+    }
+
+    & .menu_item.hidden {
+      display: block;
+      font-size: 36px;
+      pointer-events: none;
+    }
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .payment__card-back {
+    right: auto;
+    left: 49.5%;
+  }
+
+  .title {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .payment__card-number {
+    width: 43px;
+  }
+
+  .payment__card-cvv input {
+    width: 108px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .payment__card-number {
+    width: 38px;
+    margin-right: 6px;
+    padding-left: 6px;
+  }
+
+  .payment__card-cvv input {
+    width: 50px;
+  }
+
+  .payment__card-back {
+    left: 54%;
+    top:53.7%
+  }
+  .payment__card {
+    padding: 24px 15px 13px 14px;
+  }
+  .content__info {
+    padding: 28px;
+    font-size: 13px;
+  }
+}
+
+
