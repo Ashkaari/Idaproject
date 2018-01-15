@@ -1,0 +1,3 @@
+# Idaproject
+> npm i
+> gulp
